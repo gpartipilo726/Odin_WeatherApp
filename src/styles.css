@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-color: rgb(13, 76, 177);
+    --sec-color: rgb(93, 158, 255);
+    --text-color: rgb(227, 227, 227);
+}
+
+.title{
+    padding: .8rem;
+    font-size: 1.3rem;
+}
+
+
+.container{
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.main-search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 60vw;
+}
+
+input {
+    width: 20vw;
+    height: 2.5vh;
+}
+
+button{
+    width: 100px;
+    height: 25px;
+
+}
+
+.display-content{
+    width: 60vw;
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+
+}
+
+.forecast-container{
+    width: 60vw;
+    max-width: 800px;
+
+}
+
+.main-content{
+    display: flex;
+    padding: 12px;
+    gap: 8px;
+    max-width: 800px;
+
+}
+
+.main-content-item{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 14px;
+    gap: 20px;
+    padding: 16px;
+
+}
+
+.main-content-item h2{
+    font-size: 1.8rem;
+}
+
+.main-content-item h3{
+    font-size: 2.8rem;
+}
+
+.main-content-item h4{
+    font-size: 1.5rem;
+}
+
+.main-content-item h5{
+    font-size: 1.3rem;
+}
+
+
+.temp-data{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.temp-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: space-between;
+    gap: 20px;
+    font-size: 1.1rem;
+}
