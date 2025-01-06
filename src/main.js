@@ -4,28 +4,28 @@ import {getAPIWeatherData, printWeather} from "./weather.js";
 const searchBtn = document.querySelector('#search-Btn');
 const input = document.querySelector('#search');
 const error = document.querySelector('.error');
+const tempToggle = document.querySelector('#temp-Checkbox');
 
-searchBtn.addEventListener('click', getWeather);
+searchBtn.addEventListener('click', initWeather);
 
 input.addEventListener('keypress', (e) => {
 
     if (e.key == 'Enter'){
-        getWeather()
+        initWeather()
     }
 
 });
 
 
-async function getWeather() {
+async function initWeather() {
     try{
+        const toggleWeatherBtn = document.querySelector('.slider-container');
         let system = 'us';
+        
         const data = await getAPIWeatherData(system);
-        console.log(data);
     
         printWeather(data);
-
-        const tempToggle = document.querySelector('#temp-Checkbox');
-        tempToggle.addEventListener('click', toggleWeather);
+        toggleWeatherBtn.style.display = 'flex';
 
     } catch (e){
         error.textContent = e;
@@ -35,9 +35,7 @@ async function getWeather() {
 
 async function getWeatherTemp(system) {
     try{
-        let system = 'us';
         const data = await getAPIWeatherData(system);
-        console.log(data);
     
         printWeather(data);
 
@@ -48,19 +46,33 @@ async function getWeatherTemp(system) {
 }
 
 
+tempToggle.addEventListener('click', toggleWeather);
 
 
 
 function toggleWeather(){
+    console.log("inside toggle weather func")
     let tempMeasurement = document.querySelector("#temp-Checkbox");
-    console.log(tempMeasurement.getAttribute("system"));
+    console.log(tempMeasurement.value);
 
-    if(tempMeasurement.getAttribute("system") === "us"){
-        tempMeasurement.setAttribute("system", "metric");
-        getWeatherTemp(tempMeasurement.getAttribute("system"))
-    } else {
-        tempMeasurement.setAttribute("system", "us");
-        getWeatherTemp(tempMeasurement.getAttribute("system"))
+    if(tempMeasurement.checked){
+        getWeatherTemp("metric");
+    } else if(!tempMeasurement.checked) {
+        getWeatherTemp("us");
+
     }
+
+
+
+
+    // console.log(tempMeasurement.getAttribute("system"));
+
+    // if(tempMeasurement.getAttribute("system") === "us"){
+    //     tempMeasurement.setAttribute("system", "metric");
+    //     getWeatherTemp(tempMeasurement.getAttribute("system"))
+    // } else {
+    //     tempMeasurement.setAttribute("system", "us");
+    //     getWeatherTemp(tempMeasurement.getAttribute("system"))
+    // }
 
 }

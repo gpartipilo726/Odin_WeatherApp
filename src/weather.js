@@ -90,12 +90,6 @@ export function printWeather(data){
     <div class="forecast-background">
         <div class="header">
             <h2 class="header-title">${data.resolvedAddress}</h2>
-            <h2 class="slider-temp">F°</h2>
-            <label class="switch">
-                <input id="temp-Checkbox" system="us" type="checkbox">
-                <span class="slider round"></span>
-            </label>
-            <h2 class="slider-temp">C°</h2>
         </div>
             <div class="forecast-container">
                 <div class="main-content">
@@ -263,7 +257,5 @@ export function printWeather(data){
             </div>
         </div>
     </div>`
-
-
 
 }

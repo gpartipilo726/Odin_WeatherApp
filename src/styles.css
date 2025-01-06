@@ -42,11 +42,11 @@ html,body {
 .container{
     min-width: 100%;
     height: 100%;
-    padding-bottom: 20px;
+    padding-bottom: 500px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: url("./imgs/weather.jpg") no-repeat center center fixed;; 
+    background: url("./imgs/weather.jpg") repeat center center fixed;; 
     background-size: cover;
 
 
@@ -60,7 +60,7 @@ html,body {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    width: 60vw;
+    width: 50vw;
 }
 
 #search::placeholder{
@@ -274,9 +274,10 @@ button:focus{
     padding: 10px;
 }
 
-.forecast-desc{
-    font-size: 1.3rem;
+.forecast-day, .forecast-desc{
+    font-size: 1.4rem;
 }
+
 
 .forecast-dataItem{
     display: flex;
@@ -301,6 +302,17 @@ button:focus{
     gap: 10px;
     width: 100%;
 
+}
+.slider-container{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    gap: 8px;
+    background-color: var(--sec-color);
+    padding: 16px;
+    margin-left: 20px;
+    border-radius: 8px;
 }
 
 .slider-temp{
